@@ -1,4 +1,6 @@
-﻿namespace Mobiles
+﻿using System;
+
+namespace Mobiles
 {
     public class Stern : INode
     {
@@ -12,6 +14,23 @@
         public int Balance()
         {
             return Weight;
+        }
+
+        public void Print(int depth = 0)
+        {
+            var msg = "";
+
+            for (var i = 0; i < depth; i++)
+                msg += "\t";
+
+            msg += ToString();
+
+            Console.WriteLine(msg);
+        }
+
+        public override string ToString()
+        {
+            return $"Stern - Weight: {Weight}";
         }
     }
 }

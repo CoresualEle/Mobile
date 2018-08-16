@@ -18,6 +18,8 @@ namespace Mobiles.Test
 
             stabTwo.Balance();
 
+            stabTwo.Print();
+
             Assert.IsTrue(Math.Abs(((Stab)stabOne).Position - 6) < 0.05);
             Assert.IsTrue(Math.Abs(((Stab)stabTwo).Position - 6) < 0.05);
         }
@@ -33,6 +35,8 @@ namespace Mobiles.Test
             var stabTwo = new Stab(stabOne, sternThree, 10) as INode;
 
             stabTwo.Balance();
+
+            stabTwo.Print();
 
             Assert.IsTrue(Math.Abs(((Stab)stabOne).Position - 4.5) < 0.05);
             Assert.IsTrue(Math.Abs(((Stab)stabTwo).Position - 5) < 0.05);

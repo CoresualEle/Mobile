@@ -12,6 +12,8 @@
             var stabTwo = new Stab(stabOne, sternThree, 10);
 
             stabTwo.Balance();
+
+            stabTwo.Print();
         }
     }
 }

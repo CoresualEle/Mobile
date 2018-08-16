@@ -9,6 +9,8 @@ namespace Mobiles
             LeftChildNode = leftChildNode;
             RightChildNode = rightChildNode;
             Length = length;
+
+            Position = 0;
         }
 
         public INode LeftChildNode { get; }
@@ -28,9 +30,27 @@ namespace Mobiles
 
             Position = Length * (1 - ratio);
 
-            Console.WriteLine($"Balanced Node set to Pos: {Position}!");
-
             return leftWeight + rightWeight;
+        }
+
+        public void Print(int depth = 0)
+        {
+            var msg = "";
+
+            for (var i = 0; i < depth; i++)
+                msg += "\t";
+
+            msg += ToString();
+
+            Console.WriteLine(msg);
+
+            LeftChildNode.Print(depth + 1);
+            RightChildNode.Print(depth + 1);
+        }
+
+        public override string ToString()
+        {
+            return $"Stab - Length: {Length}, Position: {Position}";
         }
     }
 }
